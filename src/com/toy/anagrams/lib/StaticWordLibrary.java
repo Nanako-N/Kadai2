@@ -31,6 +31,8 @@
 
 package com.toy.anagrams.lib;
 
+import java.util.Random;
+
 /**
  * Implementation of the logic for the Anagram Game application.
  */
@@ -83,55 +85,56 @@ final class StaticWordLibrary extends WordLibrary {
         "unsigned",
         "traditional",
         "import"};
-
+    
     private static final String[] SCRAMBLED_WORD_LIST = {
-        "batsartc",
-        "maibuguos",
-        "ratimhteci",
-        "abkclssha",
-        "ibmtpa",
-        "iccrmutsnaec",
-        "ocbmnitaoni",
-        "ocsnqeeutnyl",
-        "ocsnroitmu",
-        "edrcmeneitgn",
-        "edepdnneyc",
-        "idasbmgiauet",
-        "ydanicm",
-        "neacsplutaoni",
-        "qeiuaveltn",
-        "xerpseisno",
-        "aficilatet",
-        "rfgaemtn",
-        "ehaxedicalm",
-        "milpmeneatitno",
-        "niidtsniugsiahleb",
-        "niehiratcen",
-        "nietnret",
-        "ajav",
-        "olacilazitno",
-        "imrcpoorecssro",
-        "anivagitno",
-        "poitimazitno",
-        "aparemert",
-        "aprtcki",
-        "ipkcel",
-        "opylomprich",
-        "irogorsuyl",
-        "isumtlnaoesuyl",
-        "psceficitaoni",
-        "tsurtcreu",
-        "elixalc",
-        "ilekiwse",
-        "amanegemtn",
-        "aminupalet",
-        "amhtmetacsi",
-        "ohjtvaa",
-        "evtrxe",
-        "nuisngde",
-        "rtdatioialn",
-        "pmoitr"
-    };
+            "batsartc",
+            "maibuguos",
+            "ratimhteci",
+            "abkclssha",
+            "ibmtpa",
+            "iccrmutsnaec",
+            "ocbmnitaoni",
+            "ocsnqeeutnyl",
+            "ocsnroitmu",
+            "edrcmeneitgn",
+            "edepdnneyc",
+            "idasbmgiauet",
+            "ydanicm",
+            "neacsplutaoni",
+            "qeiuaveltn",
+            "xerpseisno",
+            "aficilatet",
+            "rfgaemtn",
+            "ehaxedicalm",
+            "milpmeneatitno",
+            "niidtsniugsiahleb",
+            "niehiratcen",
+            "nietnret",
+            "ajav",
+            "olacilazitno",
+            "imrcpoorecssro",
+            "anivagitno",
+            "poitimazitno",
+            "aparemert",
+            "aprtcki",
+            "ipkcel",
+            "opylomprich",
+            "irogorsuyl",
+            "isumtlnaoesuyl",
+            "psceficitaoni",
+            "tsurtcreu",
+            "elixalc",
+            "ilekiwse",
+            "amanegemtn",
+            "aminupalet",
+            "amhtmetacsi",
+            "ohjtvaa",
+            "evtrxe",
+            "nuisngde",
+            "rtdatioialn",
+            "pmoitr"
+        };
+
     
     final static WordLibrary DEFAULT = new StaticWordLibrary();
 
@@ -156,7 +159,7 @@ final class StaticWordLibrary extends WordLibrary {
      * @return word at that index in its scrambled form
      */
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
+    	return SCRAMBLED_WORD_LIST[idx];
     }
 
     /**
