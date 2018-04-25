@@ -110,14 +110,13 @@ final class StaticWordLibrary extends WordLibrary {
      * @return word at that index in its scrambled form
      */
     public String getScrambledWord(int idx) {
-    	return makeScrambledWord(idx, 1);
+    	//makeScrambledWordメソッドにidx番目の単語とレベル(初期値は1とする)を投げて並べ替えてもらう
+    	return makeScrambledWord(getWord(idx), 1);
     }
     
-    //
-    public String makeScrambledWord(int idx, int level) {
-    	//正しい単語リストからidx番目を取り出す
-    	String word = WORD_LIST[idx];
-    	//取り出した単語を1文字ずつ分割して配列にいれる
+    //単語内の文字を並び替えるメソッド
+    public String makeScrambledWord(String word, int level) {
+    	//与えられた単語を1文字ずつ分割して配列にいれる
     	String[] split = word.split("");
     	
     	Random rnd = new Random();
