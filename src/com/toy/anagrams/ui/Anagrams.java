@@ -218,6 +218,11 @@ public class Anagrams extends JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mainPanel.add(selectLevel, gridBagConstraints);
+        selectLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectLevelActionPerformed(evt);
+            }
+        });
 
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
@@ -230,6 +235,7 @@ public class Anagrams extends JFrame {
         aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aboutMenuItemActionPerformed(evt);
+                
             }
         });
         fileMenu.add(aboutMenuItem);
@@ -253,6 +259,7 @@ public class Anagrams extends JFrame {
         new About(this).setVisible(true);
     }//GEN-LAST:event_aboutMenuItemActionPerformed
 
+    
     private void nextTrialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextTrialActionPerformed
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
 
@@ -264,6 +271,12 @@ public class Anagrams extends JFrame {
         guessedWord.requestFocusInWindow();
     }//GEN-LAST:event_nextTrialActionPerformed
 
+    private void selectLevelActionPerformed(java.awt.event.ActionEvent evt) {
+    	int level = selectLevel.getSelectedIndex();
+    	scrambledWord.setText(wordLibrary.makeScrambledWord(wordLibrary.getWord(wordIdx),level+1));
+    	guessedWord.requestFocusInWindow();
+    }
+    
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
